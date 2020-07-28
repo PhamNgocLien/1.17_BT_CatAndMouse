@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cat and mouse</title>
+</head>
+<body>
+<table>
+    <tbody>
+    <tr>
+        <td width="80px"></td>
+        <td><img src="images/cat.jpg"></td>
+        <td><img src="images/mouse.jpg"></td>
+    </tr>
+    <tr>
+        <td>Weight:</td>
+        <td id="weight-cat"></td>
+        <td id="weight-mouse"></td>
+    </tr>
+    <tr>
+        <td>Speed:</td>
+        <td id="speed-cat"></td>
+        <td id="speed-mouse"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td colspan="2">
+            <button type="button" onclick="cat.catchMouse(mouse)">Catch mouse</button>
+            <button type="button" onclick="cat.eatMouse(mouse)">Eat mouse</button>
+            <button type="button" onclick="mouse.killMouse()">Kill mouse</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<script src="mouse.js"></script>
+<script src="cat.js"></script>
+<script>
+    let cat = new Cat();
+    cat.setWeight(+prompt("Please input cat's weight"));
+    cat.setSpeed(+prompt("Please input cat's speed =< 20"));
+    document.getElementById('weight-cat').innerHTML = cat.getWeight();
+    document.getElementById('speed-cat').innerHTML = cat.getSpeed();
+
+    let mouse = new Mouse();
+    mouse.setWeight(+prompt("Please input mouse's weight"));
+    mouse.setSpeed(+prompt("Please input mouase's speed"));
+    document.getElementById('weight-mouse').innerHTML = mouse.getWeight();
+    document.getElementById('speed-mouse').innerHTML = mouse.getSpeed();
+
+
+</script>
+</body>
+</html>
